@@ -20,30 +20,38 @@ public class Game
         System.out.println("_________________________");
         System.out.println("Welcome to Game of Nim");
         System.out.println("_________________________");
+        System.out.println("Instructions:");
         System.out.println("When it is your turn, you must take between 1 paperclip to 50% of the paperclips.");
         System.out.println("The player who takes the last paperclip loses.");
-        System.out.println("There are " + numberOfPaperclips + " paperclips.");
+        System.out.println("There are " + numberOfPaperclips + " paperclips. (Randomly generated 1-50 inclusive)");
         System.out.println("_________________________");
 
+        currentPlayer = (int)(Math.random() * 2) == 0 ? "player" : "bot";
+
         while (numberOfPaperclips > 0) {
-            System.out.println("_________________________");
+            System.out.println("Game Status:");
             System.out.println("There are " + numberOfPaperclips + " paperclips.");
             System.out.println("_________________________");
             if (currentPlayer.equals("player")) {
+                System.out.println("Play by " + player.getName() + ":");
                 numberOfPaperclips -= player.askForPaperclipsToTake(numberOfPaperclips);
                 currentPlayer = "bot";
             } else {
+                System.out.println("Play by bot:");
                 numberOfPaperclips -= bot.askForPaperclipsToTake(numberOfPaperclips);
                 currentPlayer = "player";
             }
+
+            System.out.println("_________________________");
         }
 
-        System.out.println("_________________________");
 
         if (currentPlayer.equals("player")) {
-            System.out.println("\u001B[32m" + "You won " + player.getName() + "!" + "\u001B[32m");
+            System.out.println("Game Over:");
+            System.out.println("\u001B[32m" + "You won " + player.getName() + "!" + "\u001B[0m");
         } else {
-            System.out.println("\u001B[31m" + "The bot won!" + "\u001B[31m");
+            System.out.println("Game Over:");
+            System.out.println("\u001B[31m" + "The bot won!" + "\u001B[0m");
         }
     }
 }

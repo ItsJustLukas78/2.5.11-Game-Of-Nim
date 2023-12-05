@@ -9,6 +9,10 @@ import java.util.Scanner;
 public class Player
 {
     private String name;
+    public String getName()
+    {
+        return name;
+    }
 
     public Player()
     {
@@ -19,10 +23,6 @@ public class Player
         name = newName;
     }
 
-    public String getName()
-    {
-        return name;
-    }
 
     public int askForPaperclipsToTake(int currentPaperclips) {
         System.out.println("How many paperclips would you like to take? (1 paperclip to 50%)");
