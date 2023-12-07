@@ -16,6 +16,7 @@ public class Game
         bot = new Bot();
     }
 
+    // Play the game
     public void play() {
         System.out.println("_________________________");
         System.out.println("Welcome to Game of Nim");
@@ -26,8 +27,10 @@ public class Game
         System.out.println("There are " + numberOfPaperclips + " paperclips. (Randomly generated 1-50 inclusive)");
         System.out.println("_________________________");
 
+        // Randomly choose who goes first
         currentPlayer = (int)(Math.random() * 2) == 0 ? "player" : "bot";
 
+        // Continue playing until there are no more paperclips
         while (numberOfPaperclips > 0) {
             System.out.println("Game Status:");
             System.out.println("There are " + numberOfPaperclips + " paperclips.");
@@ -46,6 +49,7 @@ public class Game
         }
 
 
+        // Print the winner
         if (currentPlayer.equals("player")) {
             System.out.println("Game Over:");
             System.out.println("\u001B[32m" + "You won " + player.getName() + "!" + "\u001B[0m");

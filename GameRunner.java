@@ -10,6 +10,7 @@ public class GameRunner
 {
   public static void main(String[] args)
   {
+    // Create a new game each time the player wants to play again
     while (true) {
       Game nim = new Game();
       nim.play();

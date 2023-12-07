@@ -24,10 +24,12 @@ public class Player
     }
 
 
+    // Ask the player for number of paperclips to take
     public int askForPaperclipsToTake(int currentPaperclips) {
         System.out.println("How many paperclips would you like to take? (1 paperclip to 50%)");
         int numPaperclips = 0;
 
+        // Validate input
         while ((numPaperclips <= 0 || numPaperclips > (int) (currentPaperclips / 2))) {
             try {
                 System.out.println("Please enter a valid number of paperclips to take.");

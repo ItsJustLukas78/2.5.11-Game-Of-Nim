@@ -4,6 +4,7 @@
  * Bot Class for the Game of Nim
 */
 public class Bot {
+    // Ask the player for number of paperclips to take
     public int askForPaperclipsToTake(int currentPaperclips) {
         System.out.println("The bot is thinking...");
 
@@ -18,6 +19,7 @@ public class Bot {
         return paperclipsToTake;
     }
 
+    // Calculate the optimal number of paperclips to take
     private int calculateOptimalPaperclips(int currentPaperclips) {
         int targetMultiple = 0;
 
